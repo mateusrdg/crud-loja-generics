@@ -1,6 +1,6 @@
 package com.crud.loja.controller.sistema;
 
-import com.crud.loja.controller.comum.ControllerBase;
+import com.crud.loja.controller.comum.BaseController;
 import com.crud.loja.domain.sistema.Vendedor;
 import com.crud.loja.dto.sistema.PessoaDto;
 import com.crud.loja.repository.sistema.VendedorRepository;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/vendedores")
-public class VendedorController extends ControllerBase<Vendedor, VendedorRepository, VendedorService, PessoaDto> {
+public class VendedorController extends BaseController<Vendedor, VendedorRepository, VendedorService, PessoaDto> {
 
     /*@Autowired
     VendedorService service;

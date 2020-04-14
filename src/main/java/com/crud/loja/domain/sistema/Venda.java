@@ -1,6 +1,6 @@
 package com.crud.loja.domain.sistema;
 
-import com.crud.loja.domain.base.EntidadeBase;
+import com.crud.loja.domain.comum.EntidadeBase;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;

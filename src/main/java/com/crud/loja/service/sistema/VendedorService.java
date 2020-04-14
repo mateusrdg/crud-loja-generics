@@ -2,7 +2,7 @@ package com.crud.loja.service.sistema;
 
 import com.crud.loja.domain.sistema.Vendedor;
 import com.crud.loja.repository.sistema.VendedorRepository;
-import com.crud.loja.service.base.ServiceBaseImpl;
+import com.crud.loja.service.comum.ServiceBaseImpl;
 import org.springframework.stereotype.Service;
 
 

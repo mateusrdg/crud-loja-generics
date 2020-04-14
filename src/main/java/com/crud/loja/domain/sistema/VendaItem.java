@@ -1,8 +1,10 @@
 package com.crud.loja.domain.sistema;
 
+import com.crud.loja.domain.comum.EntidadeBase;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -12,12 +14,9 @@ import java.math.BigDecimal;
 @Table(name = "venda_item")
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 @Data
-public class VendaItem {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class VendaItem extends EntidadeBase {
 
     @ManyToOne
     @JoinColumn(name = "venda_id")
@@ -34,7 +33,7 @@ public class VendaItem {
     private BigDecimal valorTotal;
 
     public VendaItem (Long id, Produto produto, BigDecimal quantidade) {
-        this.id = id;
+        super(id);
         this.produto = produto;
         this.quantidade = quantidade;
     }

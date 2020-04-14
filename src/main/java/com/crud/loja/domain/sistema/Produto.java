@@ -1,6 +1,6 @@
 package com.crud.loja.domain.sistema;
 
-import com.crud.loja.domain.base.EntidadeBase;
+import com.crud.loja.domain.comum.EntidadeBase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

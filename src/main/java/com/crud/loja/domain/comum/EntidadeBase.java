@@ -1,4 +1,4 @@
-package com.crud.loja.domain.base;
+package com.crud.loja.domain.comum;
 
 import lombok.Data;
 

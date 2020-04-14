@@ -1,7 +1,7 @@
 package com.crud.loja.config;
 
 
-import com.crud.loja.domain.base.EntidadeBase;
+import com.crud.loja.domain.comum.EntidadeBase;
 import org.dozer.DozerBeanMapper;
 import org.dozer.loader.api.BeanMappingBuilder;
 import org.springframework.context.annotation.Bean;

@@ -2,7 +2,7 @@ package com.crud.loja.service.sistema;
 
 import com.crud.loja.domain.sistema.Venda;
 import com.crud.loja.repository.sistema.VendaRepository;
-import com.crud.loja.service.base.ServiceBaseImpl;
+import com.crud.loja.service.comum.ServiceBaseImpl;
 import org.springframework.stereotype.Service;
 
 
@@ -56,4 +56,15 @@ public class VendaService extends ServiceBaseImpl<Venda, VendaRepository> {
     private void vinculaItens(Venda venda) {
         venda.getItens().forEach(x -> x.setVenda(venda));
     }*/
+
+    @Override
+    public Venda insert (Venda venda) {
+        vinculaItens(venda);
+        repositorio.save(venda);
+        return venda;
+    }
+
+    private void vinculaItens(Venda venda) {
+        venda.getItens().forEach(x -> x.setVenda(venda));
+    }
 }

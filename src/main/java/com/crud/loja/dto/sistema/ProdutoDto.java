@@ -1,7 +1,7 @@
 package com.crud.loja.dto.sistema;
 
 import com.crud.loja.domain.sistema.Produto;
-import com.crud.loja.dto.base.DtoBase;
+import com.crud.loja.dto.comum.BaseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProdutoDto extends DtoBase {
+public class ProdutoDto extends BaseDto {
 
     @NotNull
     private String descricao;

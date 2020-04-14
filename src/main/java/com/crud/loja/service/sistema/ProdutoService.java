@@ -2,14 +2,14 @@ package com.crud.loja.service.sistema;
 
 import com.crud.loja.domain.sistema.Produto;
 import com.crud.loja.repository.sistema.ProdutoRepository;
-import com.crud.loja.service.base.ServiceBaseImpl;
+import com.crud.loja.service.comum.ServiceBaseImpl;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class ProdutoService extends ServiceBaseImpl<Produto, ProdutoRepository> {
 
-   /* public Produto buscarPorId(Long id) {
+   /* public Produto findById(Long id) {
       return null;
     }
     public ProdutoDto find(Long id){

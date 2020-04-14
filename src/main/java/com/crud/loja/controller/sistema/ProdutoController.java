@@ -1,6 +1,6 @@
 package com.crud.loja.controller.sistema;
 
-import com.crud.loja.controller.comum.ControllerBase;
+import com.crud.loja.controller.comum.BaseController;
 import com.crud.loja.domain.sistema.Produto;
 import com.crud.loja.dto.sistema.ProdutoDto;
 import com.crud.loja.repository.sistema.ProdutoRepository;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/produtos")
-public class ProdutoController extends ControllerBase<Produto, ProdutoRepository, ProdutoService, ProdutoDto> {
+public class ProdutoController extends BaseController<Produto, ProdutoRepository, ProdutoService, ProdutoDto> {
 /*
     @Autowired
     ProdutoService service;

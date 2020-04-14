@@ -1,10 +1,10 @@
 package com.crud.loja.service.util;
 
-import com.crud.loja.domain.base.EntidadeBase;
+import com.crud.loja.domain.comum.EntidadeBase;
 import com.crud.loja.domain.sistema.*;
-import com.crud.loja.dto.base.DtoBase;
-import com.crud.loja.repository.base.RepositorioBase;
-import com.crud.loja.service.base.ServiceBaseImpl;
+import com.crud.loja.dto.comum.BaseDto;
+import com.crud.loja.repository.comum.BaseRepository;
+import com.crud.loja.service.comum.ServiceBaseImpl;
 import com.crud.loja.service.sistema.ClienteService;
 import com.crud.loja.service.sistema.ProdutoService;
 import com.crud.loja.service.sistema.VendaService;
@@ -19,7 +19,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class DBService <E extends EntidadeBase, R extends RepositorioBase<E>, S extends ServiceBaseImpl<E, R>, D extends DtoBase>{
+public class DBService <E extends EntidadeBase, R extends BaseRepository<E>, S extends ServiceBaseImpl<E, R>, D extends BaseDto>{
     @Autowired
     private ClienteService clienteService;
     @Autowired
@@ -41,7 +41,7 @@ public class DBService <E extends EntidadeBase, R extends RepositorioBase<E>, S 
         clientes.add(new Cliente(null,"Gabriel"));
 
         log.info("Inserindo clientes...");
-        clientes.forEach(clienteService::inserir);
+        clientes.forEach(clienteService::insert);
 
         log.info("Instanciando vendedores...");
         ArrayList<Vendedor> vendedores = new ArrayList<>();
@@ -49,7 +49,7 @@ public class DBService <E extends EntidadeBase, R extends RepositorioBase<E>, S 
         vendedores.add(new Vendedor(null,"Gabrielly"));
 
         log.info("Inserindo vendedores...");
-        vendedores.forEach(vendedorService::inserir);
+        vendedores.forEach(vendedorService::insert);
 
         log.info("Instanciando produtos...");
         ArrayList<Produto> produtos = new ArrayList<>();
@@ -62,28 +62,28 @@ public class DBService <E extends EntidadeBase, R extends RepositorioBase<E>, S 
         produtos.add(new Produto(null,"Televisão", new BigDecimal(2000.00)));
 
         log.info("Inserindo produtos...");
-        produtos.forEach(produtoService::inserir);
+        produtos.forEach(produtoService::insert);
 
         log.info("Instanciando vendas");
         ArrayList<Venda> vendas = new ArrayList<>();
         List<VendaItem> itens1 = new ArrayList<>();
-        itens1.add(new VendaItem(null, produtoService.buscarPorId((long)2), new BigDecimal(1.0)));
-        vendas.add(new Venda(null, clienteService.buscarPorId((long) 1), vendedorService.buscarPorId((long)1), itens1));
+        itens1.add(new VendaItem(null, produtoService.findById((long)2), new BigDecimal(1.0)));
+        vendas.add(new Venda(null, clienteService.findById((long) 1), vendedorService.findById((long)1), itens1));
 
         List<VendaItem> itens2 = new ArrayList<>();
-        itens2.add(new VendaItem(null, produtoService.buscarPorId((long)4), new BigDecimal(5.0)));
-        itens2.add(new VendaItem(null, produtoService.buscarPorId((long)5), new BigDecimal(10.0)));
-        itens2.add(new VendaItem(null, produtoService.buscarPorId((long)6), new BigDecimal(1.0)));
-        itens2.add(new VendaItem(null, produtoService.buscarPorId((long)7), new BigDecimal(2.0)));
-        vendas.add(new Venda(null, clienteService.buscarPorId((long) 2), vendedorService.buscarPorId((long)2), itens2));
+        itens2.add(new VendaItem(null, produtoService.findById((long)4), new BigDecimal(5.0)));
+        itens2.add(new VendaItem(null, produtoService.findById((long)5), new BigDecimal(10.0)));
+        itens2.add(new VendaItem(null, produtoService.findById((long)6), new BigDecimal(1.0)));
+        itens2.add(new VendaItem(null, produtoService.findById((long)7), new BigDecimal(2.0)));
+        vendas.add(new Venda(null, clienteService.findById((long) 2), vendedorService.findById((long)2), itens2));
 
         List<VendaItem> itens3 = new ArrayList<>();
-        itens3.add(new VendaItem(null, produtoService.buscarPorId((long)1), new BigDecimal(2.0)));
-        itens3.add(new VendaItem(null, produtoService.buscarPorId((long)3), new BigDecimal(1.0)));
-        vendas.add(new Venda(null, clienteService.buscarPorId((long) 3), vendedorService.buscarPorId((long)2), itens3));
+        itens3.add(new VendaItem(null, produtoService.findById((long)1), new BigDecimal(2.0)));
+        itens3.add(new VendaItem(null, produtoService.findById((long)3), new BigDecimal(1.0)));
+        vendas.add(new Venda(null, clienteService.findById((long) 3), vendedorService.findById((long)2), itens3));
 
         log.info("Inserindo vendas");
-        vendas.forEach(vendaService::inserir);
+        vendas.forEach(vendaService::insert);
 
     }
 }
