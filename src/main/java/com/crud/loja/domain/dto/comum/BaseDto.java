@@ -1,4 +1,4 @@
-package com.crud.loja.dto.comum;
+package com.crud.loja.domain.dto.comum;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

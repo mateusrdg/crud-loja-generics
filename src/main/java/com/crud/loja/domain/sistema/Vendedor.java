@@ -10,8 +10,4 @@ import javax.persistence.Table;
 @AllArgsConstructor
 public class Vendedor extends Pessoa {
 
-    public Vendedor(Long id, String nome) {
-        super(id, nome);
-    }
-
 }

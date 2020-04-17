@@ -1,10 +1,10 @@
-package com.crud.loja.dto.sistema;
+package com.crud.loja.domain.dto.sistema;
 
-import com.crud.loja.domain.sistema.Venda;
-import com.crud.loja.dto.comum.BaseDto;
+import com.crud.loja.domain.dto.comum.BaseDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.validation.Valid;
@@ -13,11 +13,11 @@ import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class VendaDto extends BaseDto {
 
     @NotNull
@@ -33,14 +33,6 @@ public class VendaDto extends BaseDto {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private BigDecimal valorTotal;
-
-    /*public VendaDto(Venda venda) {
-        super(venda.getId());
-        this.cliente = new PessoaDto(venda.getCliente());
-        this.vendedor = new PessoaDto(venda.getVendedor());
-        this.itens =  venda.getItens().stream().map(VendaItemDto::new).collect(Collectors.toList());
-        this.valorTotal = venda.getValorTotal();
-    }*/
 
     public VendaDto(Long id, PessoaDto cliente, PessoaDto vendedor, List<VendaItemDto> itens) {
         super(id);

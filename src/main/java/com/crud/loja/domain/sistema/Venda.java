@@ -35,13 +35,6 @@ public class Venda extends EntidadeBase {
     @Transient
     private BigDecimal valorTotal;
 
-    public Venda(Long id, Cliente cliente, Vendedor vendedor, List<VendaItem> itens) {
-        super(id);
-        this.cliente = cliente;
-        this.vendedor = vendedor;
-        this.itens = itens;
-    }
-
     public BigDecimal getValorTotal(){
         return itens.stream().map(VendaItem::getValorTotal).reduce(BigDecimal.ZERO, BigDecimal::add);
     }

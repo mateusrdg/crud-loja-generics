@@ -16,8 +16,4 @@ public abstract class Pessoa extends EntidadeBase {
 
     private String nome;
 
-    public Pessoa(Long id, String nome) {
-        super(id);
-        this.nome = nome;
-    }
 }

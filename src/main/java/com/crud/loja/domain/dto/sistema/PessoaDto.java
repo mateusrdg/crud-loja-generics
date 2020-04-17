@@ -1,9 +1,9 @@
-package com.crud.loja.dto.sistema;
+package com.crud.loja.domain.dto.sistema;
 
-import com.crud.loja.domain.sistema.Pessoa;
-import com.crud.loja.dto.comum.BaseDto;
+import com.crud.loja.domain.dto.comum.BaseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
@@ -11,13 +11,10 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class PessoaDto extends BaseDto {
 
     @NotNull
     private String nome;
 
-    public PessoaDto(Pessoa pessoa) {
-        super(pessoa.getId());
-        this.nome = pessoa.getNome();
-    }
 }

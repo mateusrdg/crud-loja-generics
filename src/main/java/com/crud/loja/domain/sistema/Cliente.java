@@ -10,8 +10,4 @@ import javax.persistence.Table;
 @AllArgsConstructor
 
 public class Cliente extends Pessoa {
-
-    public Cliente(Long id, String nome) {
-        super(id, nome);
-    }
 }

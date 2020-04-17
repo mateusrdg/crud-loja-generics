@@ -26,10 +26,4 @@ public class Produto extends EntidadeBase {
     @OneToMany(mappedBy = "produto")
     List<VendaItem> items = new ArrayList<>();
 
-    public Produto(Long id, String descricao, BigDecimal valor) {
-        setId(id);
-        this.descricao = descricao;
-        this.valor = valor;
-    }
-
 }

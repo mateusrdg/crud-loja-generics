@@ -2,17 +2,18 @@ package com.crud.loja.service.comum;
 
 import java.util.List;
 
-public interface ServiceBase<Entidade> {
+public interface ServiceBase<E, D> {
 
-    Entidade findById(Long id);
+    D findById(Long id);
 
-    List<Entidade> findAll();
+    List<D> findAll();
 
-    Entidade insert(Entidade entidade);
+    E insert(D entidade);
 
-    Entidade update(Entidade entidade);
+    E update(D entidade);
 
     void delete(Long id);
 
     void verificaSeRegistroExiste(Long id);
+
 }
